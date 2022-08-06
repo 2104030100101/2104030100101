@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport"
+        content="width=device-width,
+                 initial-scale=1">
+  <title>jQuery form validation </title>
+
+  
+  <link rel="stylesheet" 
+        href=
+"https://fonts.googleapis.com/css?family=Roboto:300,400,700">
+  
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet"
+        href=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  
+  <!-- Include FontAwesome CSS -->
+  <link rel="stylesheet"
+        href=
+"https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+
+
+  
+  <!-- Include the Poppa Plugin Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="validation.css">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <link rel="stylesheet" type="text/css" href="github.css">
+  <sceipt type="text/js"></sceipt>
+  <style>
+    h2 {
+      padding-left: 300px;
+    }
+  </style>
+</head>
+  
+<body>
+  <h2 style="color:green">
+    jQuery form validation
+  </h2>
+  <b style="padding-left:300px">
+    jQuery form validation
+  </b>
+    
+<p></p>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-9">
+        <div class="example-block mb-4">
+          <form action="" class="live-validation mb-3" 
+                id="live-validation">
+            <div class="form-group">
+              <label>Name</label>
+  
+              <!-- Validation for Upper case only-->
+              <input name="name" type="name" 
+                     data-validation-regexp="[A-Z]" 
+                     class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>Salary</label>
+  
+              <!-- Validation for type number 
+              with min and max values-->
+              <input name="login" type="number"
+                     min="10000" max="30000" 
+                     class="form-control" required>
+                     
+            </div>
+            <div class="form-group">
+              <label>Email ID</label>
+              <input name="email" type="email"
+                     class="form-control" required>
+            </div>
+            <div call="form-group">
+              <label>Mobile number</label>
+              <input name="Mobile number" type="Mobile number"
+                     class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input name="password"
+                     data-validation-type="alphanumeric" 
+                     type="password" class="form-control"
+                     required>
+            </div>
+            
+            </div>
+            <div class="form-group">
+              <label>Describe yourself</label>
+              <textarea name="bio"
+                data-validation-length="min:10,max:150"
+                data-validation-hint="Write your biodata"
+                data-validation-hint="Describe about yourself"
+                class="form-control">
+              </textarea>
+            </div>
+            <div class="form-group">
+              <label class="mb-0">
+                I agree to the terms of service
+              </label>
+              <!-- Custom validation message -->
+              <input type="checkbox" 
+                     data-validation-rqmessage=
+                     "Please agree to terms of service"
+                     required>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Submit Form
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Include jQuery -->
+  <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+  
+  <!-- Include the Poppa Plugin Scripts -->
+  <script src="global.js"></script>
+  <script src="poppa.js"></script>
+  <script src="highlight.js"></script>
+  <script>
+    $(document).ready(function () {
+  
+      /* Initiate highlighting */
+      hljs.initHighlightingOnLoad();
+  
+      /* Initiate live validation on each form */
+      $('.live-validation').validation({
+        'autocomplete': 'on',
+        'liveValidation': true
+      });
+    });
+  </script>
+</body>
+</html>
